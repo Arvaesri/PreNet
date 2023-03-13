@@ -6,7 +6,7 @@ gt_path='../datasets/test/Rain100H/';
 JORDER_path='../results/Rain100H/Rain100H_JORDER/';
 RESCAN_path='../results/Rain100H/Rain100H_RESCAN/';
 
-PReNet = '../results/Rain100H/PReNet/';
+PReNet = '../results/Filter_results_1';
 %PReNet_r = '../results/Rain100H/PReNet_r/';
 %PRN = '../results/Rain100H/PRN6/';
 %PRN_r = '../results/Rain100H/PRN_r/';

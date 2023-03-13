@@ -86,7 +86,7 @@ def prepare_data_RainTrainH(data_path, patch_size, stride):
     input_h5f = h5py.File(save_input_path, 'w')
 
     train_num = 0
-    for i in range(1800):
+    for i in range(26124):
         target_file = "norain-%d.png" % (i + 1)
         if os.path.exists(os.path.join(target_path,target_file)):
 
@@ -112,12 +112,20 @@ def prepare_data_RainTrainH(data_path, patch_size, stride):
                 print("target file: %s # samples: %d" % (input_file, target_patches.shape[3]))
 
                 for n in range(target_patches.shape[3]):
-                    target_data = target_patches[:, :, :, n].copy()
-                    target_h5f.create_dataset(str(train_num), data=target_data)
+                    # target_data = target_patches[:, :, :, n].copy()
+                    # target_h5f.create_dataset(str(train_num), data=target_data)
 
-                    input_data = input_patches[:, :, :, n].copy()
-                    input_h5f.create_dataset(str(train_num), data=input_data)
+                    # input_data = input_patches[:, :, :, n].copy()
+                    # input_h5f.create_dataset(str(train_num), data=input_data)
+                    try:
+                        target_data = target_patches[:, :, :, n].copy()
+                        input_data = input_patches[:, :, :, n].copy()
+                    except Exception as e:
+                        print(f"ERROR {e} : image {i}")
+                        pass
 
+                    target_h5f.create_dataset(str(train_num), data=target_data,  compression="gzip", compression_opts=9)
+                    input_h5f.create_dataset(str(train_num), data=input_data,  compression="gzip", compression_opts=9)
                     train_num += 1
 
     target_h5f.close()
