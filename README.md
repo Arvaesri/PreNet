@@ -1,6 +1,7 @@
 ### OBS: 
 * O modelo pre-treinado do desafio está em logs/Rain100H/PReNet/
 * Para executar o treino novamente é necessario modificar o numero de imagens em DerainDataset.py
+* As imagens seguem um padrão de nome de rain-xxx.png ou norain-xxx.png
 
 ## [Progressive Image Deraining Networks: A Better and Simpler Baseline](https://www.researchgate.net/publication/338511165_Progressive_Image_Deraining_Networks_A_Better_and_Simpler_Baseline) 
 [[arxiv](https://arxiv.org/abs/1901.09221)] [[pdf](https://www.researchgate.net/publication/338511165_Progressive_Image_Deraining_Networks_A_Better_and_Simpler_Baseline)] [[supp](https://csdwren.github.io/papers/PReNet_supp.pdf)]
